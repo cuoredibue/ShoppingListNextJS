@@ -29,9 +29,9 @@ function MyDropdown(props) {
           ></path>
         </svg>
       </Menu.Button>
-      <Menu.Items className="bg-gray-100 focus:outline-none animate-[enterFromLeft_200ms] absolute">
+      <Menu.Items className="bg-gray-100 w-full focus:outline-none animate-[enterFromLeft_200ms] fixed">
         <Menu.Item>
-          <div className="p-6 w-screen  sm:w-96 text-center flex  flex-row ">
+          <div className="p-6 w-full text-center flex  flex-row ">
             <Link
               className="border-2 border-gray-100 hover:border-b-orange-700/75 border-b-orange-700/75 basis-1/2  rounded p-1 "
               href="/"
