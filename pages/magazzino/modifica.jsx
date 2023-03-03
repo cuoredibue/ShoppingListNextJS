@@ -85,6 +85,7 @@ const SetWarehouse = () => {
                 const { id, name, quantity, date } = item;
                 return (
                   <TableRow
+                    key={id}
                     id={id}
                     name={name}
                     quantity={quantity}

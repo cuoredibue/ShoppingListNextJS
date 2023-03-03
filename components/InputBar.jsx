@@ -52,7 +52,7 @@ const InputBar = (props) => {
   };
 
   return (
-    <div className=" bg-gray-100 fixed   w-screen  top-0 sm:mb-6  z-20 p-2">
+    <div className=" bg-gray-100  sticky  w-screen  top-0 sm:mb-6  z-20 p-2">
       <HeaderMenu />
       <div className="flex h-8 mb-2 sm:mb-1 rounded-full bg-orange-200">
         <div className="flex-none">

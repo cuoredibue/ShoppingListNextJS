@@ -10,8 +10,8 @@ function MyDropdown(props) {
       <Menu.Button
         className={
           (inputError &&
-            "bg-red-400 sm:hidden flex justify-center h-8 w-10 rounded-l-full  text-orange-700/75 group") ||
-          "bg-orange-200 flex justify-center sm:hidden h-8 w-10 rounded-full text-orange-700/75 group"
+            "bg-red-400 sm:hidden flex justify-center h-8 w-10 rounded-l-full  text-orange-700/75 focus:outline-none group") ||
+          "bg-orange-200 flex justify-center sm:hidden h-8 w-10 rounded-full text-orange-700/75 focus:outline-none group"
         }
       >
         <svg
@@ -29,9 +29,9 @@ function MyDropdown(props) {
           ></path>
         </svg>
       </Menu.Button>
-      <Menu.Items className="bg-gray-100  animate-[enterFromTop_200ms] absolute">
+      <Menu.Items className="bg-gray-100 focus:outline-none animate-[enterFromLeft_200ms] absolute">
         <Menu.Item>
-          <div className="p-5 w-screen  sm:w-96 text-center flex  flex-row ">
+          <div className="p-6 w-screen  sm:w-96 text-center flex  flex-row ">
             <Link
               className="border-2 border-gray-100 hover:border-b-orange-700/75 border-b-orange-700/75 basis-1/2  rounded p-1 "
               href="/"

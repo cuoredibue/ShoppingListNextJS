@@ -64,20 +64,18 @@ const Item = (props) => {
             value={value}
           />
         </div>
-        <Popover.Button>
-          <div className="flex space-x-3 text-lg data-[state=open]:underline underline-offset-8">
-            {quantity > 1 && (
-              <h2 className="text-gray-500 text-xs mt-2">x{quantity}</h2>
-            )}
-            <h2
-              onClick={() => {
-                setMessage(null);
-              }}
-              className="text-gray-800 hover:underline mb-1 "
-            >
-              {name}
-            </h2>
-          </div>
+        <Popover.Button className="flex focus:outline-none space-x-3 text-lg">
+          {quantity > 1 && (
+            <h2 className="text-gray-500 text-xs mt-2">x{quantity}</h2>
+          )}
+          <h2
+            onClick={() => {
+              setMessage(null);
+            }}
+            className="text-gray-800 hover:underline mb-1 "
+          >
+            {name}
+          </h2>
         </Popover.Button>
         <Popover.Panel>
           <div

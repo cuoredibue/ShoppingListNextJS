@@ -11,7 +11,7 @@ const TableRowInput = (props) => {
     newQuantity,
   } = props;
   return (
-    <div className="animate-[enterFromRight_300ms] table-row bg-yellow-200 text-gray-600  ">
+    <div className="animate-[enterFromLeft_300ms] table-row bg-yellow-200 text-gray-600  ">
       <div className="table-cell py-2 border-t ">
         <input
           className=" bg-yellow-100 rounded  w-32 text-sm focus:bg-yellow-300 focus:outline-none"

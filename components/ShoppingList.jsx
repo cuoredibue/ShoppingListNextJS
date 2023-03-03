@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 
 //components
-import InputBar from "./InputBar";
-import { FetchData } from "./database";
-import Item from "./Item";
-import BottomBar from "./BottomBar";
-import WelcomeMessage from "./WelcomeMessage";
-import Notification from "./Notification";
+import InputBar from "../components/InputBar";
+import { FetchData } from "../components/database";
+import Item from "../components/Item";
+import BottomBar from "../components/BottomBar";
+import WelcomeMessage from "../components/WelcomeMessage";
+import Notification from "../components/Notification";
 
 const ShoppingList = () => {
   const database = "lista_spesa";
@@ -43,7 +43,7 @@ const ShoppingList = () => {
         />
       )}
 
-      <div className="sm:flex bg-gray-100  mt-14 sm:mt-28  sm:justify-center ">
+      <div className="sm:flex bg-gray-100  sm:justify-center ">
         <div className="sm:grid  lg:grid-cols-4 2xl:grid-cols-8 sm:gap-x-24 sm:gap-y-2 sm:grid-cols-3  ">
           {items &&
             items.map((item, index) => {

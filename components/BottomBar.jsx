@@ -48,7 +48,7 @@ const BottomBar = (props) => {
 
   return (
     <>
-      <div className="p-2 bg-gray-100 w-screen 2xl:bottom-20  fixed sm:mt-6 bottom-0 z-10">
+      <div className="p-2 bg-gray-100 w-screen 2xl:bottom-20  sticky bottom-0 z-10">
         <div className=" h-8 flex sm:justify-center xl:h-10 flex-row-reverse sm:bg-gray-100 bg-orange-200  rounded-full">
           <button
             type="button"
