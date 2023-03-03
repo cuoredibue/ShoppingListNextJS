@@ -43,7 +43,7 @@ function MyDropdown(props) {
               className=" border-2 border-gray-100 hover:border-b-orange-700/75 basis-1/2 rounded p-1 "
               href="/magazzino/modifica"
             >
-              <HomeIcon />
+              <HomeIcon className="text-gray-400" />
               <p className="text-slate-400 ">Scorte</p>
             </Link>
           </div>

@@ -82,7 +82,7 @@ const Item = (props) => {
         <Popover.Panel>
           <div
             className={
-              "flex animate-[enterFromRight_300ms] space-x-2 rounded text-slate-300"
+              "flex animate-[enterFromLeft_300ms] space-x-2 rounded text-slate-300"
             }
           >
             <button
