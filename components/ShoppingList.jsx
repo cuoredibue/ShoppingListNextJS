@@ -11,7 +11,7 @@ import Notification from "../components/Notification";
 const ShoppingList = () => {
   const database = "lista_spesa";
   const [newItemName, setNewItemName] = useState("");
-  const [items, setItems] = useState([]);
+  const [items, setItems] = useState(["item"]);
   const [messageForUser, setMessageForUser] = useState(null);
   const [inputError, setInputError] = useState(null);
   const [orderBy, setOrder] = useState("name");
