@@ -11,7 +11,7 @@ function MyDropdown(props) {
         className={
           (inputError &&
             "bg-red-400 sm:hidden flex justify-center h-8 w-10 rounded-l-full  text-orange-700/75 focus:outline-none group") ||
-          "bg-orange-200 flex justify-center sm:hidden h-8 w-10 rounded-full text-orange-700/75 focus:outline-none group"
+          "bg-orange-200 dark:bg-teal-500 dark:text-teal-800 flex justify-center sm:hidden h-8 w-10 rounded-full text-orange-700/75 focus:outline-none group"
         }
       >
         <svg
@@ -29,22 +29,22 @@ function MyDropdown(props) {
           ></path>
         </svg>
       </Menu.Button>
-      <Menu.Items className="bg-gray-100 w-full focus:outline-none animate-[enterFromLeft_200ms] fixed">
+      <Menu.Items className="bg-gray-100 dark:bg-slate-800 w-full focus:outline-none animate-[enterFromLeft_200ms] fixed">
         <Menu.Item>
           <div className="p-6 w-full text-center flex  flex-row ">
             <Link
-              className="border-2 border-gray-100 hover:border-b-orange-700/75 border-b-orange-700/75 basis-1/2  rounded p-1 "
+              className="border-2 dark:border-slate-800 border-gray-100 dark:hover:border-b-teal-500 hover:border-b-orange-700/75 dark:border-b-teal-500 border-b-orange-700/75 basis-1/2  rounded p-1 "
               href="/"
             >
-              <ShoppingBasketIcon className="text-orange-700/75" />
-              <p className="  text-slate-600">Lista spesa</p>
+              <ShoppingBasketIcon className="text-orange-700/75 dark:text-teal-500" />
+              <p className="dark:text-white text-slate-600">Lista spesa</p>
             </Link>
             <Link
-              className=" border-2 border-gray-100 hover:border-b-orange-700/75 basis-1/2 rounded p-1 "
+              className=" border-2 dark:border-slate-800 border-gray-100 dark:hover:border-b-teal-500 hover:border-b-orange-700/75 basis-1/2 rounded p-1 "
               href="/magazzino/modifica"
             >
-              <HomeIcon className="text-gray-400" />
-              <p className="text-slate-400 ">Scorte</p>
+              <HomeIcon className="text-gray-400 dark:text-white" />
+              <p className="text-slate-400 dark:text-white">Scorte</p>
             </Link>
           </div>
         </Menu.Item>

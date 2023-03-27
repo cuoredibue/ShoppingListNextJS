@@ -11,10 +11,11 @@ const TableRowInput = (props) => {
     newQuantity,
   } = props;
   return (
-    <div className="animate-[enterFromLeft_300ms] table-row bg-yellow-200 text-gray-600  ">
-      <div className="table-cell py-2 border-t ">
+    <div className="animate-[enterFromLeft_300ms] sticky top-5 table-row dark:bg-teal-500 bg-yellow-200 dark:text-white text-gray-600  ">
+      <div className="table-cell pl-2 py-2 border-t ">
         <input
-          className=" bg-yellow-100 rounded  w-32 text-sm focus:bg-yellow-300 focus:outline-none"
+          autoFocus
+          className="dark:bg-teal-500 bg-yellow-100 rounded  w-32 text-sm dark:focus:bg-teal-700 focus:bg-yellow-300 focus:outline-none "
           type="text"
           onKeyDown={(e) => {
             if (e.key === "Enter") {
@@ -29,7 +30,7 @@ const TableRowInput = (props) => {
       </div>
       <div className="table-cell border-t">
         <input
-          className=" bg-yellow-100 rounded w-8 text-sm focus:bg-yellow-300 focus:outline-none"
+          className=" bg-yellow-100 dark:bg-teal-500 dark:focus:bg-teal-700 rounded w-8 text-sm focus:bg-yellow-300 focus:outline-none"
           type="number"
           value={newQuantity}
           onKeyDown={(e) => {
@@ -44,7 +45,7 @@ const TableRowInput = (props) => {
       </div>
       <div className="table-cell border-t text-center">
         <button
-          className="hover:scale-125 text-teal-500"
+          className="hover:scale-125 dark:text-teal-800 text-teal-500"
           onClick={() => {
             handleSubmit();
           }}
@@ -52,7 +53,7 @@ const TableRowInput = (props) => {
           <CheckIcon />
         </button>
         <button
-          className="hover:scale-125 ml-2 text-red-600"
+          className="hover:scale-125 ml-2 dark:text-white text-red-600"
           onClick={() => {
             handleDelete();
           }}
@@ -62,7 +63,7 @@ const TableRowInput = (props) => {
       </div>
       <div className="table-cell border-t lg:text-right text-center">
         <button
-          className="text-gray-400 text-sm hover:text-gray-500"
+          className="text-gray-400 dark:text-teal-700 text-sm pr-2 hover:text-gray-500"
           onClick={() => {
             setEdit(false);
           }}

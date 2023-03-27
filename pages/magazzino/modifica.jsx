@@ -57,7 +57,7 @@ const SetWarehouse = () => {
     refreshPage();
   };
   return (
-    <div className=" relative w-screen h-screen bg-gray-100  ">
+    <div className=" relative w-screen h-screen dark:bg-slate-800 bg-gray-100  ">
       <HeaderMenu database={database} />
       {messageForUser && (
         <Notification
@@ -65,7 +65,7 @@ const SetWarehouse = () => {
           setMessageForUser={setMessageForUser}
         />
       )}
-      <div className="justify-center flex bg-gray-100">
+      <div className="justify-center flex  dark:bg-slate-800 bg-gray-100">
         <div className="table  w-screen lg:w-full lg:max-w-6xl  ">
           <TableHeader setOrder={setOrder} />
           {edit === true && (

@@ -11,7 +11,7 @@ import Notification from "../components/Notification";
 const ShoppingList = () => {
   const database = "lista_spesa";
   const [newItemName, setNewItemName] = useState("");
-  const [items, setItems] = useState(["item"]);
+  const [items, setItems] = useState([]);
   const [messageForUser, setMessageForUser] = useState(null);
   const [inputError, setInputError] = useState(null);
   const [orderBy, setOrder] = useState("name");
@@ -25,7 +25,7 @@ const ShoppingList = () => {
   }, []);
 
   return (
-    <div className=" relative w-screen h-screen bg-gray-100  ">
+    <div className=" relative w-screen h-screen dark:bg-slate-800 bg-gray-100  ">
       <InputBar
         setNewItemName={setNewItemName}
         newItemName={newItemName}
@@ -43,8 +43,8 @@ const ShoppingList = () => {
         />
       )}
 
-      <div className="sm:flex bg-gray-100  sm:justify-center ">
-        <div className="sm:grid  lg:grid-cols-4 2xl:grid-cols-8 sm:gap-x-24 sm:gap-y-2 sm:grid-cols-3  ">
+      <div className="sm:flex bg-gray-100 dark:bg-slate-800 sm:justify-center ">
+        <div className="sm:grid lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-8 sm:gap-x-24 sm:gap-y-2 sm:grid-cols-2 ">
           {items &&
             items.map((item, index) => {
               const { id, name, quantity, checked } = item;

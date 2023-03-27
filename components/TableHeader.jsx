@@ -1,8 +1,8 @@
 const TableHeader = (props) => {
   const { setOrder } = props;
   return (
-    <div className="table-header-group">
-      <div className="table-row text-gray-600 text-sm font-semibold ">
+    <div className="table-header-group sticky top-0 dark:bg-slate-800 ">
+      <div className="table-row dark:text-slate-400 text-gray-600 text-sm font-semibold ">
         <div
           onClick={() => {
             setOrder("name");
@@ -27,6 +27,7 @@ const TableHeader = (props) => {
         >
           Data
         </div>
+        <div></div>
       </div>
     </div>
   );

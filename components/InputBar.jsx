@@ -52,9 +52,9 @@ const InputBar = (props) => {
   };
 
   return (
-    <div className=" bg-gray-100  sticky  w-screen  top-0 sm:mb-6  z-20 p-2">
+    <div className=" bg-gray-100 dark:bg-slate-800 sticky  w-screen  top-0 sm:mb-6  z-20 p-2">
       <HeaderMenu />
-      <div className="flex h-8 mb-2 sm:mb-1 rounded-full bg-orange-200">
+      <div className="flex h-8 mb-2 sm:mb-1 rounded-full bg-orange-200 dark:bg-teal-500">
         <div className="flex-none">
           <MyDropdown inputError={inputError} />
         </div>
@@ -65,7 +65,7 @@ const InputBar = (props) => {
             className={
               (inputError &&
                 "input none h-full  w-full  bg-red-400 placeholder-red-900 rounded-l-none sm:rounded-l-full focus:outline-none rounded-r-none") ||
-              "input none h-full   w-full max-w-8xl bg-orange-200 rounded-l-full focus:outline-none rounded-r-none text-gray-900"
+              "input none h-full  placeholder-white w-full max-w-8xl bg-orange-200  dark:bg-teal-500 dark:text-white rounded-l-full focus:outline-none rounded-r-none text-gray-900"
             }
             type="text"
             onKeyDown={(e) => {
@@ -82,7 +82,7 @@ const InputBar = (props) => {
           <input
             value="+"
             type="button"
-            className="btn-xs text-lg text-gray-100 hover:bg-teal-600 bg-teal-500 rounded-r-full w-12 border-none h-full"
+            className="btn-xs text-lg text-gray-100 hover:bg-teal-600  dark:bg-teal-800 bg-teal-500 rounded-r-full w-12 border-none h-full"
             onClick={handleSubmit}
           />
         </div>
