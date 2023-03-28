@@ -2,6 +2,7 @@ import { AddData, DeleteData } from "../components/database";
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment, useState } from "react";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import { supabase } from "../pages";
 const BottomBar = (props) => {
   const { database, refresh, items, setMessage } = props;
 
@@ -13,6 +14,31 @@ const BottomBar = (props) => {
     refresh();
   };
 
+  // verify if item already exist, then add or update item
+  const fetchSingleItem = async (name, quantity) => {
+    const { data: previousData, error } = await supabase
+      .from("scorte")
+      .select()
+      .eq("name", name)
+      .single();
+    if (error) {
+      console.log(error);
+    }
+    if (previousData) {
+      const newQuantity = quantity + previousData.quantity;
+      const { data, error } = await supabase.from("scorte").upsert({
+        id: previousData.id,
+        name,
+        quantity: newQuantity,
+      });
+      if (error) {
+        console.log(error);
+      }
+    }
+    if (!previousData) {
+      AddData("scorte", name, quantity);
+    }
+  };
   ////////////// transfer checked items from list to warehouse ////////////////
   const handleTransfer = async () => {
     let checkedItems = items.filter((item) => {
@@ -25,7 +51,7 @@ const BottomBar = (props) => {
 
     await checkedItems.map((item) => {
       const { name, quantity } = item;
-      AddData("scorte", name, quantity);
+      fetchSingleItem(name, quantity);
     });
 
     deleteCheckedItems();
@@ -89,7 +115,7 @@ const BottomBar = (props) => {
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
               >
-                <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl dark:bg-purple-700 bg-white p-6 text-left align-middle shadow-xl transition-all">
+                <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl dark:bg-slate-800 bg-white p-6 text-left align-middle shadow-xl transition-all">
                   <Dialog.Title
                     as="h3"
                     className="text-lg font-medium leading-6 dark:text-white text-gray-900"
@@ -97,7 +123,7 @@ const BottomBar = (props) => {
                     Termina spesa
                   </Dialog.Title>
                   <div className="mt-2">
-                    <p className="text-sm dark:text-purple-200 text-gray-500">
+                    <p className="text-sm dark:text-gray-100 text-gray-500">
                       Con questa azione gli articoli contrassegnati verranno
                       rimossi e aggiunti alla lista scorte, proseguire?
                     </p>
@@ -106,7 +132,7 @@ const BottomBar = (props) => {
                   <div className="mt-4 space-x-2">
                     <button
                       type="button"
-                      className="inline-flex justify-center rounded-md border border-transparent  bg-green-200 px-4 py-2 text-sm font-medium text-green-900 hover:bg-green-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                      className="inline-flex justify-center rounded-md border border-transparent dark:bg-emerald-400 dark:hover:bg-emerald-500 bg-green-200 px-4 py-2 text-sm font-medium text-green-900 hover:bg-green-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                       onClick={() => {
                         handleTransfer();
                         closeModal();
@@ -115,7 +141,7 @@ const BottomBar = (props) => {
                       Conferma
                     </button>
                     <button
-                      className="text-gray-500 dark:text-purple-400"
+                      className="text-gray-500 dark:text-gray-400"
                       onClick={closeModal}
                     >
                       annulla

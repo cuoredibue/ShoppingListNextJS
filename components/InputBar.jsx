@@ -65,7 +65,7 @@ const InputBar = (props) => {
             className={
               (inputError &&
                 "input none h-full  w-full  bg-red-400 placeholder-red-900 rounded-l-none sm:rounded-l-full focus:outline-none rounded-r-none") ||
-              "input none h-full  placeholder-white w-full max-w-8xl bg-orange-200  dark:bg-teal-500 dark:text-white rounded-l-full focus:outline-none rounded-r-none text-gray-900"
+              "input none h-full  dark:placeholder-white w-full max-w-8xl bg-orange-200  dark:bg-teal-500 dark:text-white rounded-l-full focus:outline-none rounded-r-none text-gray-900"
             }
             type="text"
             onKeyDown={(e) => {
